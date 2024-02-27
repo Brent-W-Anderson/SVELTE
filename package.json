@@ -1,0 +1,37 @@
+{
+    "name": "your-project-name",
+    "version": "1.0.0",
+    "description": "Your project description",
+    "license": "MIT",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "clean": "rimraf node_modules .svelte-kit .vite",
+        "lint": "eslint src --ext .ts,.svelte",
+        "lint:fix": "eslint --fix src --ext .ts,.svelte",
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+        "@typescript-eslint/eslint-plugin": "^6.17.0",
+        "@typescript-eslint/parser": "^7.0.2",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-svelte3": "^4.0.0",
+        "prettier": "^3.1.1",
+        "rimraf": "^5.0.5",
+        "sass": "^1.71.1",
+        "stylelint": "^16.1.0",
+        "stylelint-config-standard-scss": "^13.0.0",
+        "svelte": "^3.48.0",
+        "svelte-check": "^2.8.0",
+        "svelte-preprocess": "^4.10.1",
+        "typescript": "^5.3.3",
+        "vite": "^5.0.10"
+    },
+    "dependencies": {
+        "classnames": "^2.5.1"
+    },
+    "packageManager": "yarn@4.1.0"
+}
