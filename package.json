@@ -3,35 +3,45 @@
     "version": "1.0.0",
     "description": "Your project description",
     "license": "MIT",
+    "packageManager": "yarn@4.1.0",
     "scripts": {
-        "dev": "vite",
+        "start": "concurrently \"yarn vite\" \"yarn generate:scss-types\"",
         "build": "vite build",
         "preview": "vite preview",
         "clean": "rimraf node_modules .svelte-kit .vite",
-        "lint": "eslint src --ext .ts,.svelte",
-        "lint:fix": "eslint --fix src --ext .ts,.svelte",
-        "format": "prettier --write ."
+        "lint": "eslint src --ext .ts,.svelte && stylelint \"**/*.scss\"",
+        "lint:fix": "eslint --fix src --ext .ts,.svelte && stylelint \"**/*.scss\" --fix",
+        "format": "prettier --write .",
+        "set:sdk": "yarn dlx @yarnpkg/sdks vscode",
+        "generate:scss-types": "typed-scss-modules src --exportType default --nameFormat none -w"
     },
     "devDependencies": {
-        "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
-        "@typescript-eslint/eslint-plugin": "^6.17.0",
-        "@typescript-eslint/parser": "^7.0.2",
-        "eslint": "^8.56.0",
+        "@sveltejs/vite-plugin-svelte": "^3.0.2",
+        "@types/eslint": "^8.56.3",
+        "@typescript-eslint/eslint-plugin": "^7.1.0",
+        "@typescript-eslint/parser": "^7.1.0",
+        "concurrently": "^8.2.2",
+        "eslint": "^8.57.0",
         "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-prettier": "^5.1.3",
         "eslint-plugin-svelte3": "^4.0.0",
-        "prettier": "^3.1.1",
+        "postcss": "^8.4.35",
+        "prettier": "^3.2.5",
+        "prettier-plugin-svelte": "^3.2.1",
         "rimraf": "^5.0.5",
         "sass": "^1.71.1",
-        "stylelint": "^16.1.0",
+        "stylelint": "^16.2.1",
         "stylelint-config-standard-scss": "^13.0.0",
-        "svelte": "^3.48.0",
-        "svelte-check": "^2.8.0",
-        "svelte-preprocess": "^4.10.1",
+        "svelte-check": "^3.6.4",
+        "svelte-preprocess": "^5.1.3",
+        "typed-scss-modules": "^8.0.0",
         "typescript": "^5.3.3",
-        "vite": "^5.0.10"
+        "vite": "^5.1.4",
+        "vite-plugin-html": "^3.2.2"
     },
     "dependencies": {
-        "classnames": "^2.5.1"
-    },
-    "packageManager": "yarn@4.1.0"
+        "classnames": "^2.5.1",
+        "svelte": "^4.2.12"
+    }
 }
